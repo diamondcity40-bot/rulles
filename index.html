@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>💎 Diamond City RP S3 💎</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root{
+    --main:#00e5ff;
+    --dark:#0b0f14;
+    --box:#141a22;
+}
+
+*{box-sizing:border-box;}
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:radial-gradient(circle at top,#1c2b36,#06080c);
+    color:white;
+}
+
+header{
+    text-align:center;
+    padding:30px;
+    font-size:36px;
+    font-weight:900;
+    color:var(--main);
+    text-shadow:0 0 15px rgba(0,229,255,.6);
+}
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.tabs{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.tab{
+    padding:14px 26px;
+    border-radius:14px;
+    background:var(--box);
+    cursor:pointer;
+    transition:.3s;
+    font-weight:600;
+}
+
+.tab:hover,
+.tab.active{
+    background:var(--main);
+    color:black;
+}
+
+.search{
+    text-align:center;
+    margin:20px 0;
+}
+
+.search input{
+    width:60%;
+    max-width:400px;
+    padding:14px;
+    border-radius:30px;
+    border:none;
+    outline:none;
+    background:#0d131a;
+    color:white;
+    font-size:15px;
+}
+
+.content{
+    display:none;
+    background:var(--box);
+    padding:25px;
+    border-radius:18px;
+    margin-top:20px;
+    animation:fade .4s ease;
+}
+
+.content.active{
+    display:block;
+}
+
+@keyframes fade{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.counter{
+    font-size:14px;
+    opacity:.7;
+    margin-bottom:10px;
+}
+
+ul{
+    list-style:none;
+    padding:0;
+}
+
+li{
+    padding:12px 18px;
+    margin:8px 0;
+    border-radius:12px;
+    background:#0e141c;
+    transition:.3s;
+}
+
+li::before{
+    content:"➤";
+    margin-right:10px;
+    color:var(--main);
+}
+
+li:hover{
+    background:var(--main);
+    color:black;
+    transform:translateX(6px);
+}
+
+footer{
+    text-align:center;
+    margin:30px 0;
+    opacity:.6;
+}
+
+@media(max-width:600px){
+    .search input{width:90%;}
+    .tab{padding:12px 18px; font-size:14px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>💎 Diamond City RP S3 💎</header>
+
+<div class="container">
+
+    <div class="tabs">
+        <div class="tab active" onclick="openTab('city',this)">🏙️ أوامر المدينة</div>
+        <div class="tab" onclick="openTab('state',this)">🏛️ أوامر الدولة</div>
+        <div class="tab" onclick="openTab('gang',this)">🔫 أوامر القانق</div>
+        <div class="tab" onclick="openTab('faction',this)">🚓 أوامر الفاكشن</div>
+    </div>
+
+    <div class="search">
+        <input type="text" id="searchInput" placeholder="🔍 ابحث عن أمر">
+    </div>
+
+    <!-- أوامر المدينة -->
+    <div id="city" class="content active">
+        <div class="counter"></div>
+        <ul>
+            <li>/location – تحديد موقع العمل</li>
+            <li>/showid – بطاقة تعريف</li>
+            <li>/pay – إعطاء المال</li>
+            <li>/handsup – رفع اليدين</li>
+            <li>/lock – قفل السيارة</li>
+            <li>/join – العمل</li>
+            <li>/buyhouse – شراء منزل</li>
+            <li>/buyvehicle – شراء سيارة</li>
+            <li>/inv – الحقيبة</li>
+            <li>/buy – شراء من متجر</li>
+            <li>/sell – بيع شيء</li>
+            <li>/use repairkit – تصليح السيارة</li>
+            <li>/vstash – خزنة السيارة</li>
+            <li>/buylevel – شراء مستوى</li>
+            <li>/locate – GPS</li>
+            <li>/drop – رمي غرض</li>
+            <li>/phone – الهاتف</li>
+            <li>/changepass – تغيير كلمة السر</li>
+        </ul>
+    </div>
+
+    <!-- أوامر الدولة -->
+    <div id="state" class="content">
+        <div class="counter"></div>
+        <ul>
+            <li>/faction invite – إضافة عضو</li>
+            <li>/faction kick – طرد عضو</li>
+            <li>/faction rank – إعطاء رتبة</li>
+            <li>/faction roster – عرض الأعضاء</li>
+            <li>/takeweaponlic – سحب رخصة سلاح</li>
+            <li>/takecarlic – سحب رخصة قيادة</li>
+            <li>/take – سحب الأسلحة والمخدرات</li>
+            <li>/ticket – غرامة</li>
+            <li>/gov – راديو الدولة</li>
+            <li>/deploy – إنشاء حاجز</li>
+            <li>/undeploy – إزالة حاجز</li>
+            <li>/mdc – كمبيوتر الشرطة</li>
+            <li>/badge – الشارة</li>
+            <li>/cuff – تكبيش</li>
+            <li>/uncuff – فك التكبيش</li>
+            <li>/detain – إدخال الموقوف</li>
+            <li>/vtake – أخذ أغراض من السيارة</li>
+            <li>/giveweaponlic – إعطاء رخصة سلاح</li>
+            <li>/impound – حجز سيارة</li>
+            <li>/charge – مطلوبين</li>
+        </ul>
+    </div>
+
+    <!-- أوامر القانق -->
+    <div id="gang" class="content">
+        <div class="counter"></div>
+        <ul>
+            <li>/gang invite – دعوة عصابة</li>
+            <li>/gang rank – رتبة العصابة</li>
+            <li>/gang kick – طرد عضو</li>
+            <li>/gang roster – عرض أعضاء العصابة</li>
+            <li>/gang skin – سكن العصابة</li>
+            <li>/gang online – أعضاء أونلاين</li>
+            <li>/gstash – خزنة العصابة</li>
+            <li>/selldreg – بيع المخدرات</li>
+            <li>/robbank – سرقة بنك</li>
+            <li>/capture – أخذ بوينت</li>
+            <li>/claim – أخذ تارف</li>
+            <li>/f – شات العصابة</li>
+            <li>/bandana – شارة العصابة</li>
+            <li>/tie – تكبيش مواطن مخطوف</li>
+            <li>/grabgun – حمل سلاح من الأرض</li>
+            <li>/dropgun – رمي السلاح</li>
+            <li>/frisk – تفتيش شخص</li>
+        </ul>
+    </div>
+
+    <!-- أوامر الفاكشن -->
+    <div id="faction" class="content">
+        <div class="counter"></div>
+        <ul>
+            <li>/vticket – غرامة سيارة</li>
+            <li>/dl – فحص لوحة سيارة</li>
+            <li>/detain – إدخال الموقوف</li>
+            <li>/vtake – أخذ أغراض من السيارة</li>
+            <li>/giveweaponlic – إعطاء رخصة سلاح</li>
+            <li>/charge – مطلوبين</li>
+            <li>/drag – سحب شخص</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>© Diamond City RP S3</footer>
+
+<script>
+function openTab(id,el){
+    document.querySelectorAll('.content').forEach(c=>c.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    el.classList.add('active');
+    document.getElementById("searchInput").value=""; // يمسح البحث عند تغيير التاب
+}
+
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("keyup",()=>{
+    const value = searchInput.value.toLowerCase();
+    document.querySelectorAll(".content.active li").forEach(li=>{
+        li.style.display = li.textContent.toLowerCase().includes(value) ? "" : "none";
+    });
+});
+
+// عداد الأوامر لكل خانة
+document.querySelectorAll(".content").forEach(section=>{
+    const count = section.querySelectorAll("li").length;
+    section.querySelector(".counter").textContent = `عدد الأوامر: ${count}`;
+});
+</script>
+
+</body>
+</html>
